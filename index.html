@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Daniel Härtter — Physicist, Data Scientist &amp; AI Engineer</title>
+<meta name="description" content="Daniel Härtter: physicist, data scientist and AI engineer at TECLION (Finanzamt Kassel), developing AI solutions for the public sector, and postdoctoral researcher in cardiac biophysics at UMG Göttingen. Papers and open-source tools on sarcomere dynamics, tissue morphogenesis, and bio-image analysis.">
+<meta name="author" content="Daniel Härtter">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Dr. Daniel Härtter — Physicist, Data Scientist &amp; AI Engineer">
+<meta property="og:description" content="AI for living systems and the public sector: papers, open-source tools, and CV.">
+<meta property="og:image" content="https://haertter.eu/assets/avatar.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23a31621'/%3E%3Cpath d='M8 34h11l5-15 8 27 5-12h19' fill='none' stroke='%23fff' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#faf9f7;--text:#1b1e23;--muted:#5b6470;--accent:#a31621;--accent-soft:#f3e3e5;--movie-op:.17;
+  --line:#e6e2db;--card:#fff;--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#141618;--text:#e7e4de;--muted:#9aa3ad;--accent:#e0707d;--accent-soft:#2a2124;--line:#2b2f34;--card:#1b1e21;--movie-op:.22;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2}
+::selection{background:var(--accent);color:#fff}
+
+header.masthead{position:relative;padding:72px 0 12px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.bg-movie{position:absolute;top:-48px;right:0;width:min(560px,92vw);z-index:-1;opacity:var(--movie-op);pointer-events:none;mask-image:radial-gradient(circle closest-side,#000 58%,transparent 97%);-webkit-mask-image:radial-gradient(circle closest-side,#000 58%,transparent 97%)}
+.movie-caption{font-size:12px;color:var(--muted);margin:14px 0 0}
+.avatar{width:132px;height:132px;border-radius:50%;border:1px solid var(--line);display:block}
+.masthead h1{font-size:44px;margin:0 0 6px;letter-spacing:.01em}
+.masthead .tagline{color:var(--muted);margin:0 0 22px;font-size:17.5px}
+.masthead .tagline b{color:var(--text);font-weight:600}
+.masthead .position{display:block;color:var(--text);font-family:var(--serif);font-size:19px;margin-bottom:4px}
+.contact{list-style:none;display:flex;flex-wrap:wrap;gap:6px 18px;margin:0;padding:0;font-size:14.5px}
+.contact a{color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:1px}
+.contact a:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+
+nav.topbar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:36px}
+nav.topbar ul{list-style:none;display:flex;gap:26px;margin:0;padding:12px 0;font-size:14.5px}
+nav.topbar a{color:var(--muted);letter-spacing:.02em}
+nav.topbar a:hover{color:var(--accent);text-decoration:none}
+
+section{padding:44px 0 8px}
+h2{font-size:15px;font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:600;margin:0 0 22px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+
+ol.pubs{list-style:none;margin:0;padding:0}
+ol.pubs li{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+.pub-year{color:var(--muted);font-size:14px;padding-top:3px;font-variant-numeric:tabular-nums}
+.pub-title{font-family:var(--serif);font-size:18px;color:var(--text);font-weight:600}
+.pub-title:hover{color:var(--accent);text-decoration:none}
+.pub-authors{margin:4px 0 0;font-size:14.5px;color:var(--text)}
+.pub-venue{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.pub-venue .pill{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:99px;padding:0 9px;font-size:12.5px;margin-left:6px;vertical-align:1px}
+.more{margin-top:16px;font-size:14.5px;color:var(--muted)}
+
+ul.projects{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;transition:border-color .15s}
+.proj:hover{border-color:var(--accent)}
+.proj-name{font-family:monospace;font-size:15px;font-weight:700;color:var(--accent)}
+.proj-desc{display:block;margin-top:4px;font-size:14px;color:var(--muted);line-height:1.45}
+@media (max-width:620px){ul.projects{grid-template-columns:1fr}ol.pubs li{grid-template-columns:1fr;gap:2px}.pub-year{display:none}.masthead h1{font-size:36px}.avatar{width:104px;height:104px}header.masthead{gap:18px}}
+
+ul.cv{list-style:none;margin:0;padding:0}
+ul.cv li{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.cv-period{color:var(--muted);font-size:14px;padding-top:2px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cv-what strong{font-weight:600}
+.cv-what .sub{color:var(--muted);font-size:14px;display:block}
+@media (max-width:560px){ul.cv li{grid-template-columns:1fr;gap:1px}.cv-period{display:none}}
+
+h3.awards-title{font-size:15px;margin:30px 0 10px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;font-family:var(--sans);font-weight:600}
+ul.awards{list-style:none;margin:0;padding:0;font-size:15px}
+ul.awards li{padding:5px 0;color:var(--text)}
+ul.awards .yr{color:var(--muted);font-size:14px;margin-right:8px;display:inline-block;min-width:106px}
+
+
+footer{padding:44px 0 56px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:48px}
+@media (prefers-reduced-motion:reduce){.bg-movie{display:none}}
+@media print{nav.topbar{display:none}.bg-movie{display:none}body{font-size:12px}section{padding:16px 0 0}footer{display:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="masthead">
+  <img class="bg-movie" src="assets/bg.webp" alt="" aria-hidden="true">
+  <img class="avatar" src="assets/avatar.jpg" alt="Portrait of Daniel Härtter" width="132" height="132">
+  <div>
+    <h1>Dr. Daniel Härtter</h1>
+    <p class="tagline"><span class="position">Physicist building AI for living systems and the public sector</span><b>Data Scientist &amp; AI Engineer</b> at TECLION · <b>Postdoctoral researcher</b> in cardiac biophysics at UMG Göttingen</p>
+    <ul class="contact">
+      <li><a href="mailto:dani.hae@posteo.de">Email</a></li>
+      <li><a href="mailto:daniel.haertter@med.uni-goettingen.de">Email (UMG)</a></li>
+      <li><a href="https://github.com/danihae">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/daniel-haertter/">LinkedIn</a></li>
+      <li><a href="https://scholar.google.com/citations?user=Ksi_LVEAAAAJ">Google Scholar</a></li>
+      <li><a href="https://orcid.org/0000-0002-9582-6141">ORCID</a></li>
+    </ul>
+  </div>
+</header>
+</div>
+
+<nav class="topbar" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#papers">Papers</a></li>
+      <li><a href="#opensource">Open Source</a></li>
+      <li><a href="#cv">CV</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="about">
+  <h2>About</h2>
+  <p>I am a physicist working at the interface of artificial intelligence and complex systems. At <a href="https://it.hessen.de/ueber-uns/finanzamt-kassel-teclion">TECLION</a>, the AI competence center of the Hessian tax administration at Finanzamt Kassel, I develop data-driven AI solutions for the public sector. Part-time, I continue my research as a postdoc at UMG Göttingen. My scientific work combines biophysics and machine learning to understand living systems: stochastic sarcomere dynamics in beating heart cells (<a href="https://doi.org/10.7554/eLife.97321">eLife</a>), AI-based analysis of sarcomere organization and contractility (<a href="https://github.com/danihae/SarcAsM">SarcAsM</a>), and epithelial tissue morphogenesis through deep-learning microscopy tools (<a href="https://doi.org/10.1242/dev.200621">DeepProjection</a>) and physical models of tissue mechanics (<a href="https://doi.org/10.1073/pnas.2322732121">PNAS</a>).</p>
+</section>
+
+<section id="papers">
+  <h2>Papers</h2>
+  <ol class="pubs">
+    <li>
+      <span class="pub-year">2026</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.7554/eLife.97321">Sarcomere dynamic instability and stochastic heterogeneity drive robust cardiomyocyte contraction</a>
+        <p class="pub-authors"><strong>D. Härtter</strong>, L. Hauke, T. Driehorst, K. Nishi, W.-H. Zimmermann, C. F. Schmidt</p>
+        <p class="pub-venue"><em>eLife</em> 13, RP97321 · <a href="https://github.com/danihae/SarcomereModel">Code</a></p>
+      </div>
+    </li>
+    <li>
+      <span class="pub-year">2026</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.1038/s41467-026-76956-9">Innervated human cardiac muscle model reveals sympathetic drivers of KCNH2-associated arrhythmias</a>
+        <p class="pub-authors">L. V. Schneider, M. G. Setya, G. Bao, <strong>D. Härtter</strong>, A. Methi, D. Krüger, et al.</p>
+        <p class="pub-venue"><em>Nature Communications</em> 17, 9404</p>
+      </div>
+    </li>
+    <li>
+      <span class="pub-year">2026</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.1038/s41467-026-71749-6">Blockage of autophagy causes severe skeletal muscle disruption in a mouse model for myofibrillar myopathy 6</a>
+        <p class="pub-authors">K. Filippi, K. Graf-Riesen, M. Kuppusamy, et al., <strong>D. Härtter</strong>, et al.</p>
+        <p class="pub-venue"><em>Nature Communications</em> 17, 3436</p>
+      </div>
+    </li>
+    <li>
+      <span class="pub-year">2025</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.1073/pnas.2322732121">A minimal vertex model explains how the amnioserosa avoids fluidization during <em>Drosophila</em> dorsal closure</a>
+        <p class="pub-authors">I. Tah<sup>†</sup>, <strong>D. Härtter</strong><sup>†</sup>, J. M. Crawford, D. P. Kiehart, C. F. Schmidt, A. J. Liu <span style="color:var(--muted)">(†equal contribution)</span></p>
+        <p class="pub-venue"><em>PNAS</em> 122, e2322732121</p>
+      </div>
+    </li>
+    <li>
+      <span class="pub-year">2025</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.1101/2025.04.29.650605">SarcAsM: AI-based multiscale analysis of sarcomere organization and contractility in cardiomyocytes</a>
+        <p class="pub-authors"><strong>D. Härtter</strong>, L. Hauke, T. Driehorst, Y. Long, G. Bao, et al.</p>
+        <p class="pub-venue">bioRxiv · <a href="https://github.com/danihae/SarcAsM">Code</a><span class="pill">submitted</span></p>
+      </div>
+    </li>
+    <li>
+      <span class="pub-year">2022</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.1242/dev.200621">DeepProjection: specific and robust projection of complex 2D tissue sheets from 3D microscopy using deep learning</a>
+        <p class="pub-authors"><strong>D. Härtter</strong>, X. Wang, S. M. Fogerson, N. Ramkumar, J. M. Crawford, K. D. Poss, et al.</p>
+        <p class="pub-venue"><em>Development</em> 149, dev200621 · <a href="https://github.com/danihae/DeepProjection">Code</a></p>
+      </div>
+    </li>
+    <li>
+      <span class="pub-year">2018</span>
+      <div>
+        <a class="pub-title" href="https://doi.org/10.1038/s41467-018-03320-x">Porous translucent electrodes enhance current generation from photosynthetic biofilms</a>
+        <p class="pub-authors">T. Wenzel, <strong>D. Härtter</strong>, P. Bombelli, C. J. Howe, U. Steiner</p>
+        <p class="pub-venue"><em>Nature Communications</em> 9, 1299</p>
+      </div>
+    </li>
+  </ol>
+  <p class="more">Full list on <a href="https://scholar.google.com/citations?user=Ksi_LVEAAAAJ">Google Scholar</a> · Thesis: <a href="https://ediss.uni-goettingen.de/handle/11858/14633">Towards an active matter perspective on sarcomere dynamics in cardiomyocytes</a> (2023)</p>
+</section>
+
+<section id="opensource">
+  <h2>Open Source</h2>
+  <ul class="projects">
+    <li class="proj"><a class="proj-name" href="https://github.com/danihae/SarcAsM">SarcAsM</a>
+      <span class="proj-desc">Python package and app for AI-based multiscale analysis of sarcomere structure and contractility</span></li>
+    <li class="proj"><a class="proj-name" href="https://github.com/danihae/DeepProjection">DeepProjection</a>
+      <span class="proj-desc">Trainable deep-learning projection of curved tissue sheets from 3D microscopy stacks</span></li>
+    <li class="proj"><a class="proj-name" href="https://github.com/danihae/bio-image-unet">bio-image-unet</a>
+      <span class="proj-desc">U-Net, U-Net++, and 3D U-Net in PyTorch for bio-image segmentation — the backbone of SarcAsM</span></li>
+    <li class="proj"><a class="proj-name" href="https://github.com/danihae/SarcomereModel">SarcomereModel</a>
+      <span class="proj-desc">Mesoscopic model of coupled sarcomeres in cardiac muscle, accompanying the eLife paper</span></li>
+  </ul>
+</section>
+
+<section id="cv">
+  <h2>Short CV</h2>
+  <ul class="cv">
+    <li><span class="cv-period">07/2025 – now</span>
+      <div class="cv-what"><strong>Data Scientist &amp; AI Engineer</strong>, TECLION — developing AI solutions for the Hessian tax administration
+        <span class="sub">Finanzamt Kassel, Germany</span></div></li>
+    <li><span class="cv-period">04/2022 – now</span>
+      <div class="cv-what"><strong>Postdoctoral researcher</strong> with W.-H. Zimmermann <em>(part-time since 07/2025)</em>
+        <span class="sub">Department of Pharmacology and Toxicology, University Medical Center Göttingen</span></div></li>
+    <li><span class="cv-period">2019 – 2022</span>
+      <div class="cv-what"><strong>Visiting graduate student</strong> with C. F. Schmidt and D. P. Kiehart
+        <span class="sub">Department of Physics, Duke University</span></div></li>
+    <li><span class="cv-period">2018 – 2022</span>
+      <div class="cv-what"><strong>PhD in Biophysics</strong>, <em>summa cum laude</em>, with C. F. Schmidt
+        <span class="sub">Third Physics Institute, University of Göttingen</span></div></li>
+    <li><span class="cv-period">2015 – 2017</span>
+      <div class="cv-what"><strong>MSc in Physics</strong>, focus on biophysics and complex systems
+        <span class="sub">University of Göttingen</span></div></li>
+    <li><span class="cv-period">2015 – 2016</span>
+      <div class="cv-what"><strong>Visiting researcher</strong> with U. Steiner and T. Wenzel
+        <span class="sub">Cavendish Laboratory, University of Cambridge</span></div></li>
+    <li><span class="cv-period">2011 – 2014</span>
+      <div class="cv-what"><strong>BSc in Physics</strong>
+        <span class="sub">RWTH Aachen University</span></div></li>
+  </ul>
+
+  <h3 class="awards-title">Selected Awards &amp; Fellowships</h3>
+  <ul class="awards">
+    <li><span class="yr">2025</span> Postdoc Startup Grant, German Center for Cardiovascular Research (DZHK)</li>
+    <li><span class="yr">2022</span> Jan Peter Toennies Doctoral Thesis Award, Faculty of Physics, University of Göttingen</li>
+    <li><span class="yr">2022</span> Postdoc Fellowship, Campus Institute Data Science (CIDAS), University of Göttingen</li>
+    <li><span class="yr">2019 – 2022</span> Doctoral Scholarship, Studienstiftung des deutschen Volkes</li>
+    <li><span class="yr">2012 – 2017</span> Student Scholarship, Evangelisches Studienwerk Villigst</li>
+  </ul>
+</section>
+
+</main>
+
+<div class="wrap">
+<footer>
+  Daniel Härtter · Kassel &amp; Göttingen, Germany · <a href="mailto:dani.hae@posteo.de">dani.hae@posteo.de</a> · <a href="mailto:daniel.haertter@med.uni-goettingen.de">daniel.haertter@med.uni-goettingen.de</a>
+  <p class="movie-caption">Background movie: hPSC-derived cardiomyocyte contracting in realtime.</p>
+</footer>
+</div>
+
+</body>
+</html>
